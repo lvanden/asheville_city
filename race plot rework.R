@@ -15,11 +15,11 @@ library(ggtext)
 library(patchwork)
 
 #to read from csv
-singleGameShots<-read.csv("C:/Users/samrc/OneDrive/Documents/Mock Data/Example_shooting.csv")
+singleGameShots<-read.csv("~/asheville_city/Mock Data/Example_shooting.csv")
 ##########################################
 
   
-create_race_plot <- function(Game_ID) {
+create_race_plot <- function(Game_ID = 1) {
   set.seed(35) #random number generator 
   asp_ratio <- 1.618 #set y x ratio
   # browser
@@ -27,8 +27,6 @@ create_race_plot <- function(Game_ID) {
   ##filter csv to Game ID
   xg_query <- filter(singleGameShots,Game_ID=={Game_ID})
   
-  ##remove this- just for testing purposes
-  xg_query <- filter(singleGameShots,Game_ID==1)
   
   ##find half time and full time - max minute in period 1 or period 2
   
@@ -43,13 +41,14 @@ create_race_plot <- function(Game_ID) {
   
   game_info <- teams %>% 
     mutate(Home_Team = case_when(
-      Home_Team == 1 ~ glue::glue("Home Team"),
+      Home_Team == 1 ~ "Home Team",
       TRUE ~ "Away Team"))
   
   start_rows <- data.frame(Team = game_info$Team,
                            Match_Half = c(1), 
                            Minute = c(0), 
                            expanded_minute = c(0),
+                           xG = c(0),
                            xg_team = c(0)
   )
   
