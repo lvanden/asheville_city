@@ -66,13 +66,12 @@ asp_ratio <- 1.618 #set y x ratio
   #                        end_minute=full_time,
   #                        cum_xg = end_xg$cum_xg
   # )
-  
+
   ##goals
   goals <- large_df %>%
     filter(Outcome == "Goal") %>%
     mutate(
-      image = "image",    
-      image_path ="image"
+      image_path =paste0("<img src='", "C:/Users/samrc/Downloads/icons8-soccer-ball-24.png", "' width = '12.5' height = '12.5'/>")
     )
 
   max_xg <- round(max(large_df$cum_xg), 1)
@@ -87,7 +86,19 @@ asp_ratio <- 1.618 #set y x ratio
     filter(Home_Team ==0) %>%
     mutate(cum_xg = round(cum_xg, 2)) %>%
     tail(1)
+  ########################################
+  ##colors
+  colors <- teams %>%
+     mutate(team_color = if_else(Team== "Asheville City", "#2e334e", "#eb3434")
+     ) 
+       
   
+
+   pal <- colors$team_color
+   names(pal) <- colors$Team
+
+
+
 
   #############################################
 
@@ -109,11 +120,13 @@ asp_ratio <- 1.618 #set y x ratio
   
   p2 <- ggplot(large_df) +
     geom_step(aes(x = Minute, y = cum_xg, group = Team, colour = Team), size = 1) +
+    scale_colour_manual(values = pal) +
     geom_text_repel(data = goals, aes(x = Minute, y = cum_xg, label = Shooting_Player),
                     force = TRUE, box.padding = unit(1, "lines"),
                     family = "roboto", fontface = "bold",
                     nudge_y = 0.05, nudge_x = -6,
                     size = 5,
+                    color="#000000",
                     direction = "both") +
     geom_richtext(data = goals, aes(x = Minute, y = cum_xg, label = image_path),
                   fill = NA, 
@@ -127,6 +140,7 @@ asp_ratio <- 1.618 #set y x ratio
       label = home_team_label,
       family = "roboto",
       fontface = "bold", 
+      color="#000000",
       size = 6
     ) +
     annotate(
@@ -135,14 +149,16 @@ asp_ratio <- 1.618 #set y x ratio
       y = away_xg$cum_xg+0.1,
       label = away_team_label,
       family = "roboto",
+      color="#000000",
       fontface = "bold",
       size = 6
     ) +
+    scale_x_continuous(breaks = seq(0, full_time, 15), labels = seq(0, full_time, 15)) +
     scale_y_continuous(breaks = seq(0, max_xg, 0.5), labels = seq(0, max_xg, 0.5)) +
-    labs(x = "Time",
+    labs(x = "Time (min)",
          y = "Cumulative xG", 
-         colour = "") +
-    dark_theme_minimal() +
+         colour = "000000") +
+    theme_light() +
     theme(text = element_text(family = "roboto", face = "bold"),
           legend.position = c(.11, .91),
           legend.title = element_blank(),
@@ -153,7 +169,7 @@ asp_ratio <- 1.618 #set y x ratio
           legend.text = element_text(size = 12),
          # panel.grid.major = element_line(size = 0.25, colour = "grey"),
           panel.grid.minor = element_line(colour = "#383636"),
-          plot.background = element_rect(fill = "#262525", colour = "#262525"),
+          #plot.background = element_rect(fill = "#b4cccb", colour = "#b4cccb"),
           axis.title = element_text(size = 16), 
           axis.text = element_text(size = 12)
     ) 
