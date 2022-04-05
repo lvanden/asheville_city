@@ -1,41 +1,41 @@
-Game_ID,Date,Team,Home_Team,Match_Half,Minute,Shooting_Player,Outcome,Distance,Shot Type,Shot_Notes,A,Preceding Play,xG
-1,9/14/2020,Asheville City,1,1,38,Oliver McBurnie,Saved,9,Head,,Oliver Norwood,Pass (Dead),0.1
-1,9/14/2020,Asheville City,1,2,47,Enda Stevens,Off Target,9,Left Foot,Half volley,Oliver McBurnie,Pass (Live),0.2
-1,9/14/2020,Asheville City,1,2,51,John Fleck,Post,19,Penalty,,John Lundstram,Pass (Live),0.3
-1,9/14/2020,Asheville City,1,2,52,George Baldock,Goal,15,Right Foot,,John Fleck,Shot,0.03
-1,9/14/2020,Asheville City,1,2,72,Billy Sharp,Off Target,4,Right Foot,,George Baldock,Pass (Live),0.5
-1,9/14/2020,Asheville City,1,2,58,David McGoldrick,Blocked,23,Right Foot,,John Lundstram,Pass (Live),0.09
-1,9/14/2020,Asheville City,1,2,88,John Egan,Off Target,10,Head,,John Fleck,Pass (Dead),0.2
-1,9/14/2020,Asheville City,1,2,92,Oliver McBurnie,Blocked,9,Head,,Sander Berge,Pass (Live),0.4
-1,9/14/2020,Asheville City,1,2,94,Oliver McBurnie,Off Target,9,Head,,John Fleck,Pass (Dead),0.08
-1,9/14/2020,Wolves,0,1,3,Raúl Jiménez,Goal,14,Right Foot,Half volley,Daniel Podence,Pass (Live),0.4
-1,9/14/2020,Wolves,0,1,6,Raúl Jiménez,Saved,17,Right Foot,Half volley,Leander Dendoncker,Pass (Live),0.2
-1,9/14/2020,Wolves,0,2,75,Romain Saïss,Goal,11,Head,,Pedro Neto,Pass (Dead),0.5
-1,9/14/2020,Wolves,0,1,24,Raúl Jiménez,Off Target,24,Left Foot,,Raúl Jiménez,Dribble,0.3
-1,9/14/2020,Wolves,0,2,53,Romain Saïss,Off Target,7,Head,,João Moutinho,Pass (Dead),0.34
-1,9/14/2020,Wolves,0,2,70,Romain Saïss,Post,14,Left Foot,,Raúl Jiménez,Pass (Live),0.5
-1,9/14/2020,Wolves,0,2,64,Raúl Jiménez,Off Target,9,Left Foot,Half volley,Romain Saïss,Shot,0.1
-1,9/14/2020,Wolves,0,2,78,Adama Traoré,Off Target,27,Right Foot,,João Moutinho,Pass (Live),0.07
-1,9/14/2020,Wolves,0,2,83,Adama Traoré,Blocked,23,Right Foot,,Adama Traoré,Dribble,0.09
-1,9/14/2020,Wolves,0,2,84,Raúl Jiménez,Post,8,Head,,João Moutinho,Pass (Dead),0.23
-1,9/14/2020,Wolves,0,2,90,Adama Traoré,Blocked,25,Right Foot,,Rúben Neves,Pass (Live),0.34
-2,9/14/2020,Asheville City,0,1,38,Oliver McBurnie,Saved,9,Head,,Oliver Norwood,Pass (Dead),0.1
-2,9/14/2020,Asheville City,0,2,47,Enda Stevens,Off Target,9,Left Foot,Half volley,Oliver McBurnie,Pass (Live),0.2
-2,9/14/2020,Asheville City,0,2,51,John Fleck,Post,19,Left Foot,,John Lundstram,Pass (Live),0.3
-2,9/14/2020,Asheville City,0,2,52,George Baldock,Goal,15,Right Foot,,John Fleck,Shot,0.03
-2,9/14/2020,Asheville City,0,2,72,Billy Sharp,Off Target,4,Right Foot,,George Baldock,Pass (Live),0.5
-2,9/14/2020,Asheville City,0,2,58,David McGoldrick,Blocked,23,Right Foot,,John Lundstram,Pass (Live),0.09
-2,9/14/2020,Asheville City,0,2,88,John Egan,Off Target,10,Head,,John Fleck,Pass (Dead),0.2
-2,9/14/2020,Asheville City,0,2,92,Oliver McBurnie,Blocked,9,Head,,Sander Berge,Pass (Live),0.4
-2,9/14/2020,Asheville City,0,2,94,Oliver McBurnie,Off Target,9,Head,,John Fleck,Pass (Dead),0.08
-2,9/14/2020,Wolves,1,1,3,Raúl Jiménez,Goal,14,Right Foot,Half volley,Daniel Podence,Pass (Live),0.4
-2,9/14/2020,Wolves,1,1,6,Raúl Jiménez,Saved,17,Right Foot,Half volley,Leander Dendoncker,Pass (Live),0.2
-2,9/14/2020,Wolves,1,2,75,Romain Saïss,Goal,11,Head,,Pedro Neto,Pass (Dead),0.5
-2,9/14/2020,Wolves,1,1,24,Raúl Jiménez,Off Target,24,Left Foot,,Raúl Jiménez,Dribble,0.3
-2,9/14/2020,Wolves,1,2,53,Romain Saïss,Off Target,7,Head,,João Moutinho,Pass (Dead),0.34
-2,9/14/2020,Wolves,1,2,70,Romain Saïss,Post,14,Left Foot,,Raúl Jiménez,Pass (Live),0.5
-2,9/14/2020,Wolves,1,2,64,Raúl Jiménez,Off Target,9,Left Foot,Half volley,Romain Saïss,Shot,0.1
-2,9/14/2020,Wolves,1,2,78,Adama Traoré,Off Target,27,Right Foot,,João Moutinho,Pass (Live),0.07
-2,9/14/2020,Wolves,1,2,83,Adama Traoré,Blocked,23,Right Foot,,Adama Traoré,Dribble,0.09
-2,9/14/2020,Wolves,1,2,84,Raúl Jiménez,Post,8,Head,,João Moutinho,Pass (Dead),0.23
-2,9/14/2020,Wolves,1,2,90,Adama Traoré,Blocked,25,Right Foot,,Rúben Neves,Pass (Live),0.34
+Game_ID,Date,Team,Home_Team,Match_Half,Minute,Shooting_Player,Outcome,Y_Distance,X_Distance,Distance,Shot Type,Shot_Notes,A,Preceding Play,xG
+1,9/14/2020,Asheville City,1,1,38,Oliver McBurnie,Saved,,,9,Head,,Oliver Norwood,Pass (Dead),0.1
+1,9/14/2020,Asheville City,1,2,47,Enda Stevens,Off Target,,,9,Left Foot,Half volley,Oliver McBurnie,Pass (Live),0.2
+1,9/14/2020,Asheville City,1,2,51,John Fleck,Post,,,19,Penalty,,John Lundstram,Pass (Live),0.3
+1,9/14/2020,Asheville City,1,2,52,George Baldock,Goal,,,15,Right Foot,,John Fleck,Shot,0.03
+1,9/14/2020,Asheville City,1,2,72,Billy Sharp,Off Target,,,4,Right Foot,,George Baldock,Pass (Live),0.5
+1,9/14/2020,Asheville City,1,2,58,David McGoldrick,Blocked,,,23,Right Foot,,John Lundstram,Pass (Live),0.09
+1,9/14/2020,Asheville City,1,2,88,John Egan,Off Target,,,10,Head,,John Fleck,Pass (Dead),0.2
+1,9/14/2020,Asheville City,1,2,92,Oliver McBurnie,Blocked,,,9,Right Foot,,Sander Berge,Pass (Live),0.4
+1,9/14/2020,Asheville City,1,2,94,Oliver McBurnie,Off Target,,,9,Head,,John Fleck,Pass (Dead),0.08
+1,9/14/2020,Wolves,0,1,3,Raúl Jiménez,Goal,,,14,Right Foot,Half volley,Daniel Podence,Pass (Live),0.4
+1,9/14/2020,Wolves,0,1,6,Raúl Jiménez,Saved,,,17,Right Foot,Half volley,Leander Dendoncker,Pass (Live),0.2
+1,9/14/2020,Wolves,0,2,75,Romain Saïss,Goal,,,11,Head,,Pedro Neto,Pass (Dead),0.5
+1,9/14/2020,Wolves,0,1,24,Raúl Jiménez,Off Target,,,24,Left Foot,,Raúl Jiménez,Dribble,0.3
+1,9/14/2020,Wolves,0,2,53,Romain Saïss,Off Target,,,7,Head,,João Moutinho,Pass (Dead),0.34
+1,9/14/2020,Wolves,0,2,70,Romain Saïss,Post,,,14,Left Foot,,Raúl Jiménez,Pass (Live),0.5
+1,9/14/2020,Wolves,0,2,64,Raúl Jiménez,Off Target,,,9,Left Foot,Half volley,Romain Saïss,Shot,0.1
+1,9/14/2020,Wolves,0,2,78,Adama Traoré,Off Target,,,27,Right Foot,,João Moutinho,Pass (Live),0.07
+1,9/14/2020,Wolves,0,2,83,Adama Traoré,Blocked,,,23,Right Foot,,Adama Traoré,Dribble,0.09
+1,9/14/2020,Wolves,0,2,84,Raúl Jiménez,Post,,,8,Head,,João Moutinho,Pass (Dead),0.23
+1,9/14/2020,Wolves,0,2,90,Adama Traoré,Blocked,,,25,Right Foot,,Rúben Neves,Pass (Live),0.34
+2,9/14/2020,Asheville City,0,1,38,Oliver McBurnie,Saved,,,9,Head,,Oliver Norwood,Pass (Dead),0.1
+2,9/14/2020,Asheville City,0,2,46,Enda Stevens,Off Target,,,9,Left Foot,Half volley,Oliver McBurnie,Pass (Live),0.2
+2,9/14/2020,Asheville City,0,2,51,John Fleck,Post,,,19,Left Foot,,John Lundstram,Pass (Live),0.3
+2,9/14/2020,Asheville City,0,2,52,George Baldock,Goal,,,15,Right Foot,,John Fleck,Shot,0.03
+2,9/14/2020,Asheville City,0,2,72,Billy Sharp,Off Target,,,4,Right Foot,,George Baldock,Pass (Live),0.5
+2,9/14/2020,Asheville City,0,2,58,David McGoldrick,Blocked,,,23,Right Foot,,John Lundstram,Pass (Live),0.09
+2,9/14/2020,Asheville City,0,2,88,John Egan,Off Target,,,10,Head,,John Fleck,Pass (Dead),0.2
+2,9/14/2020,Asheville City,0,2,92,Oliver McBurnie,Blocked,,,9,Head,,Sander Berge,Pass (Live),0.4
+2,9/14/2020,Asheville City,0,2,93,Oliver McBurnie,Off Target,,,9,Head,,John Fleck,Pass (Dead),0.08
+2,9/14/2020,Wolves,1,1,3,Raúl Jiménez,Goal,,,14,Right Foot,Half volley,Daniel Podence,Pass (Live),0.4
+2,9/14/2020,Wolves,1,1,6,Raúl Jiménez,Saved,,,17,Right Foot,Half volley,Leander Dendoncker,Pass (Live),0.2
+2,9/14/2020,Wolves,1,2,75,Romain Saïss,Goal,,,11,Head,,Pedro Neto,Pass (Dead),0.5
+2,9/14/2020,Wolves,1,1,24,Raúl Jiménez,Off Target,,,24,Left Foot,,Raúl Jiménez,Dribble,0.3
+2,9/14/2020,Wolves,1,2,53,Romain Saïss,Off Target,,,7,Head,,João Moutinho,Pass (Dead),0.34
+2,9/14/2020,Wolves,1,2,70,Romain Saïss,Post,,,14,Left Foot,,Raúl Jiménez,Pass (Live),0.5
+2,9/14/2020,Wolves,1,2,64,Raúl Jiménez,Off Target,,,9,Left Foot,Half volley,Romain Saïss,Shot,0.1
+2,9/14/2020,Wolves,1,2,78,Adama Traoré,Goal,,,27,Right Foot,,João Moutinho,Pass (Live),0.07
+2,9/14/2020,Wolves,1,2,83,Adama Traoré,Blocked,,,23,Right Foot,,Adama Traoré,Dribble,0.09
+2,9/14/2020,Wolves,1,2,84,Raúl Jiménez,Post,,,8,Head,,João Moutinho,Pass (Dead),0.23
+2,9/14/2020,Wolves,1,2,90,Adama Traoré,Blocked,,,25,Right Foot,,Rúben Neves,Pass (Live),0.34
