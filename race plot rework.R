@@ -13,7 +13,8 @@ library(glue)
 library(ggtext)
 library(patchwork)
 library(showtext)
-font_add_google("Roboto", "roboto")
+font_add_google("Comic Neue", "comic")
+showtext_auto()
 
 
 #to read from csv
@@ -22,12 +23,13 @@ asp_ratio <- 1.618 #set y x ratio
 
   
 #Variables
-  xg_query <- filter(singleGameShots,Game_ID==2)
-  half_time <- 46
-  full_time<- 93
+  xg_query <- filter(singleGameShots,Game_ID==1)
+  m_w="M"
+  half_time =45
+  full_time =97
   home_team_name="Asheville City"
   away_team_name="Wolves"
-  date_label="4/5/2022"
+  date_label="4/6/2022"
   
   ##find final score
   
@@ -71,7 +73,7 @@ asp_ratio <- 1.618 #set y x ratio
   goals <- large_df %>%
     filter(Outcome == "Goal") %>%
     mutate(
-      image_path =paste0("<img src='", "C:/Users/samrc/Downloads/icons8-soccer-ball-24.png", "' width = '12.5' height = '12.5'/>")
+      image_path =paste0("<img src='", "~/R/avlgit/asheville_city/images/icons8-soccer-ball-24.png", "' width = '12.5' height = '12.5'/>")
     )
 
   max_xg <- round(max(large_df$cum_xg), 1)
@@ -123,7 +125,7 @@ asp_ratio <- 1.618 #set y x ratio
     scale_colour_manual(values = pal) +
     geom_text_repel(data = goals, aes(x = Minute, y = cum_xg, label = Shooting_Player),
                     force = TRUE, box.padding = unit(1, "lines"),
-                    family = "roboto", fontface = "bold",
+                    family = "comic", fontface = "bold",
                     nudge_y = 0.05, nudge_x = -6,
                     size = 5,
                     color="#000000",
@@ -138,7 +140,7 @@ asp_ratio <- 1.618 #set y x ratio
       x = full_time - 4,
       y = home_xg$cum_xg+0.1,
       label = home_team_label,
-      family = "roboto",
+      family = "comic",
       fontface = "bold", 
       color="#000000",
       size = 6
@@ -148,7 +150,7 @@ asp_ratio <- 1.618 #set y x ratio
       x = full_time - 4,
       y = away_xg$cum_xg+0.1,
       label = away_team_label,
-      family = "roboto",
+      family = "comic",
       color="#000000",
       fontface = "bold",
       size = 6
@@ -159,7 +161,7 @@ asp_ratio <- 1.618 #set y x ratio
          y = "Cumulative xG", 
          colour = "000000") +
     theme_light() +
-    theme(text = element_text(family = "roboto", face = "bold"),
+    theme(text = element_text(family = "comic", face = "bold"),
           legend.position = c(.11, .91),
           legend.title = element_blank(),
           legend.background = element_rect(colour = NA, fill = NA),
@@ -167,9 +169,10 @@ asp_ratio <- 1.618 #set y x ratio
           legend.margin = margin(0, 0, 0, 0, unit = "pt"),
           legend.justification = "center",
           legend.text = element_text(size = 12),
-         # panel.grid.major = element_line(size = 0.25, colour = "grey"),
-          panel.grid.minor = element_line(colour = "#383636"),
-          #plot.background = element_rect(fill = "#b4cccb", colour = "#b4cccb"),
+          panel.background = element_rect((fill="grey95")),
+          #panel.grid.major = element_line(size = 0.25, colour = "grey"),
+         # panel.grid.minor = element_line(colour = "#383636"),
+         # plot.background = element_rect(fill = "#cfcfcf", colour = "#cfcfcf"),
           axis.title = element_text(size = 16), 
           axis.text = element_text(size = 12)
     ) 
@@ -180,6 +183,6 @@ asp_ratio <- 1.618 #set y x ratio
     theme(plot.title = element_text(hjust = 0.5, size = 32))
   
   showtext_opts(dpi = 300) 
-  ggsave(paste0("race_charts/",file_name), plot=p2_mod,height = 7.93, width = 6.22 * asp_ratio)
+  ggsave(paste0("race_charts/",m_w,"/",file_name), plot=p2_mod,height = 7.93, width = 6.22 * asp_ratio)
 
 
