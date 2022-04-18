@@ -13,7 +13,7 @@ library(glue)
 library(ggtext)
 library(patchwork)
 library(showtext)
-font_add_google("Comic Neue", "comic")
+font_add_google("Alatsi", "alatsi")
 showtext_auto()
 
 
@@ -61,13 +61,15 @@ asp_ratio <- 1.618 #set y x ratio
            Shooting_Player = if_else(Shot.Type== "Penalty", paste0(Shooting_Player, " (PK)"), Shooting_Player)
     ) 
   
-  # ##create table for sum xg  
-  # end_xg <- slice_tail(large_df)
-  # end_rows <- data.frame(Team = end_xg$Team,
-  #                        Half = c(max(end_xg$Match_Half)),
-  #                        end_minute=full_time,
-  #                        cum_xg = end_xg$cum_xg
-  # )
+  # create final row to plot extends to end of game
+  end_xg <- slice_tail(large_df)
+  end_rows <- data.frame(Team = end_xg$Team,
+                         Half = c(max(end_xg$Match_Half)),
+                         Minute=full_time,
+                         cum_xg = end_xg$cum_xg
+  )
+  
+  large_df <- bind_rows(large_df, end_rows)
 
   ##goals
   goals <- large_df %>%
@@ -91,7 +93,7 @@ asp_ratio <- 1.618 #set y x ratio
   ########################################
   ##colors
   colors <- teams %>%
-     mutate(team_color = if_else(Team== "Asheville City", "#2e334e", "#eb3434")
+     mutate(team_color = if_else(Team== "Asheville City", "#2e334e", "#993333")
      ) 
        
   
@@ -125,7 +127,7 @@ asp_ratio <- 1.618 #set y x ratio
     scale_colour_manual(values = pal) +
     geom_text_repel(data = goals, aes(x = Minute, y = cum_xg, label = Shooting_Player),
                     force = TRUE, box.padding = unit(1, "lines"),
-                    family = "comic", fontface = "bold",
+                    family = "alatsi", fontface = "bold",
                     nudge_y = 0.05, nudge_x = -6,
                     size = 5,
                     color="#000000",
@@ -137,38 +139,38 @@ asp_ratio <- 1.618 #set y x ratio
     geom_vline(xintercept = half_time, size = 0.75, colour = "grey", linetype = "dashed") + 
     annotate(
       "text",
-      x = full_time - 4,
+      x = full_time - 0.2,
       y = home_xg$cum_xg+0.1,
       label = home_team_label,
-      family = "comic",
+      family = "alatsi",
       fontface = "bold", 
-      color="#000000",
-      size = 6
+      color=colors$team_color[colors$Home_Team==1],
+      size = 5
     ) +
     annotate(
       "text",
-      x = full_time - 4,
+      x = full_time - 0.2,
       y = away_xg$cum_xg+0.1,
       label = away_team_label,
-      family = "comic",
-      color="#000000",
+      family = "alatsi",
+      color=colors$team_color[colors$Home_Team==0],
       fontface = "bold",
-      size = 6
+      size = 5
     ) +
     scale_x_continuous(breaks = seq(0, full_time, 15), labels = seq(0, full_time, 15)) +
-    scale_y_continuous(breaks = seq(0, max_xg, 0.5), labels = seq(0, max_xg, 0.5)) +
+    scale_y_continuous(breaks = seq(0, max_xg, 0.2), labels = seq(0, max_xg, 0.2)) +
     labs(x = "Time (min)",
          y = "Cumulative xG", 
          colour = "000000") +
     theme_light() +
-    theme(text = element_text(family = "comic", face = "bold"),
+    theme(text = element_text(family = "alatsi", face = "bold"),
           legend.position = c(.11, .91),
           legend.title = element_blank(),
           legend.background = element_rect(colour = NA, fill = NA),
           legend.direction = "vertical",
           legend.margin = margin(0, 0, 0, 0, unit = "pt"),
           legend.justification = "center",
-          legend.text = element_text(size = 12),
+          legend.text = element_text(size = 19),
           panel.background = element_rect((fill="grey95")),
           #panel.grid.major = element_line(size = 0.25, colour = "grey"),
          # panel.grid.minor = element_line(colour = "#383636"),
@@ -177,12 +179,12 @@ asp_ratio <- 1.618 #set y x ratio
           axis.text = element_text(size = 12)
     ) 
   
-  
+
   p2_mod <- p2 + 
     labs(title = title_text) + 
     theme(plot.title = element_text(hjust = 0.5, size = 32))
   
   showtext_opts(dpi = 300) 
-  ggsave(paste0("race_charts/",m_w,"/",file_name), plot=p2_mod,height = 7.93, width = 6.22 * asp_ratio)
+  ggsave(paste0("race_charts/",m_w,"/",file_name), plot=p2_mod,height = 7.93, width = 8.40 * asp_ratio)
 
 
