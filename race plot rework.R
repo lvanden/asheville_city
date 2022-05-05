@@ -24,7 +24,7 @@ asp_ratio <- 1.618 #set y x ratio
 
   
 #Variables
-  xg_query <- filter(singleGameShots,Game_ID==1 & M_W=="M")
+  xg_query <- filter(single_game_shots, Game_ID == 1 & M_W == "M")
   m_w="M"
   half_time =45
   full_time =97
