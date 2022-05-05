@@ -59,7 +59,7 @@ asp_ratio <- 1.618 #set y x ratio
     group_by(Team) %>%
     arrange(Minute) %>%
     mutate(cum_xg = cumsum(xG), 
-           Shooting_Player = if_else(Shot_Type== "Penalty", paste0(Shooting_Player, " (PK)"), Shooting_Player)
+           Shooting_Player = if_else(Shot_Type == "Penalty", paste0(Shooting_Player, " (PK)"), Shooting_Player)
     ) 
   
   # create final row to plot extends to end of game
