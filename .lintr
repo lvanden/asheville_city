@@ -1,0 +1,7 @@
+linters: with_defaults(
+    cyclocomp_linter = NULL,
+    line_length_linter(120),
+    object_length_linter(40),
+    open_curly_linter = NULL,
+    T_and_F_symbol_linter
+  )
