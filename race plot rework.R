@@ -13,23 +13,24 @@ library(glue)
 library(ggtext)
 library(patchwork)
 library(showtext)
+library(readxl)
 font_add_google("Alatsi", "alatsi")
 showtext_auto()
 
 
-#to read from csv
-singleGameShots<-read.csv("~/R/avlgit/asheville_city/Mock Data/Example_shooting.csv")
+# Read from xlsx
+single_game_shots <- read_excel("~/R/avlgit/asheville_city/Mock Data/Example_shooting_wb.xlsx", sheet = "Example_shooting")
 asp_ratio <- 1.618 #set y x ratio
 
   
 #Variables
-  xg_query <- filter(singleGameShots,Game_ID==1)
+  xg_query <- filter(single_game_shots, Game_ID == 1 & M_W == "M")
   m_w="M"
   half_time =45
   full_time =97
   home_team_name="Asheville City"
   away_team_name="Wolves"
-  date_label="4/6/2022"
+  date_label="4/7/2022"
   
   ##find final score
   
@@ -58,7 +59,7 @@ asp_ratio <- 1.618 #set y x ratio
     group_by(Team) %>%
     arrange(Minute) %>%
     mutate(cum_xg = cumsum(xG), 
-           Shooting_Player = if_else(Shot.Type== "Penalty", paste0(Shooting_Player, " (PK)"), Shooting_Player)
+           Shooting_Player = if_else(Shot_Type == "Penalty", paste0(Shooting_Player, " (PK)"), Shooting_Player)
     ) 
   
   # create final row to plot extends to end of game
