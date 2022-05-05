@@ -18,8 +18,8 @@ font_add_google("Alatsi", "alatsi")
 showtext_auto()
 
 
-#to read from xlsx
-singleGameShots<-read_excel("~/R/avlgit/asheville_city/Mock Data/Example_shooting_wb.xlsx", sheet="Example_shooting")
+# Read from xlsx
+single_game_shots <- read_excel("~/R/avlgit/asheville_city/Mock Data/Example_shooting_wb.xlsx", sheet = "Example_shooting")
 asp_ratio <- 1.618 #set y x ratio
 
   
