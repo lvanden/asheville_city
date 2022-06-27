@@ -22,15 +22,15 @@ showtext_auto()
   
   # Create variables ----
   # * ENTER DATA HERE ----
-  xg_query <- filter(single_game_shots, Game_ID == 2 & M_W == "M")
-  m_w <- "M"
-  half_time <- 47
-  full_time <- 97
-  away_team_name <- "Asheville City"
-  home_team_name <- "One Knoxville SC"
-  date_for_plot <- "May 15, 2022"
+  xg_query <- filter(single_game_shots, Game_ID == 4 & M_W == "W")
+  m_w <- "W"
+  half_time <- 46
+  full_time <- 93
+  home_team_name <- "Asheville City"
+  away_team_name <- "NC Fusion"
+  date_for_plot <- "May 20, 2022"
   # Used for saving file
-  date_label <- "5/15/2022"
+  date_label <- "5/20/2022"
   
   
   ## Find final score ----
@@ -97,11 +97,11 @@ showtext_auto()
   
   # Colors ----
   # * ENTER COLORS HERE ----
-  away_color <- "#2e334e"
-  home_color <- "#993333" 
+  home_color <- "#2e334e"
+  away_color <- "#993333" 
  
   # Create palette    
-  pal <- c(away_color, home_color)
+  pal <- c(home_color, away_color)
 
   
   # Labels ----
@@ -170,13 +170,13 @@ showtext_auto()
       # Format title ----
       # Add color to team names
       title = str_glue(
-        "<span style='color:{away_color};'>{away_team_name}
+        "<span style='color:{home_color};'>{home_team_name}
          <span style='color:#000000;'>vs.
-         <span style='color:{home_color};'>{home_team_name}</span>
+         <span style='color:{away_color};'>{away_team_name}</span>
          </span>"),
       # Add subtitle ----
       # Date and final score
-      subtitle = paste0(date_for_plot, "\n", away_team_final_score, " - ", home_team_final_score)
+      subtitle = paste0(date_for_plot, "\n", home_team_final_score, " - ", away_team_final_score)
     ) +
     theme(text = element_text(family = "alatsi", face = "bold"),
           legend.position = "none",
