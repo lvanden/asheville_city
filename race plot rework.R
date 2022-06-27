@@ -17,20 +17,20 @@ showtext_auto()
 
 
   # Read from file ----
-  single_game_shots <- read_excel("~/R/avlgit/asheville_city/Mock Data/Example_shooting_wb.xlsx", sheet = "Example_shooting")
+  single_game_shots <- read_excel("~/R/avlgit/asheville_city/Mock Data/ACSC2022.xlsx", sheet = "Example_shooting")
   asp_ratio <- 1.618 #set y x ratio
   
   # Create variables ----
   # * ENTER DATA HERE ----
-  xg_query <- filter(single_game_shots, Game_ID == 1 & M_W == "M")
+  xg_query <- filter(single_game_shots, Game_ID == 2 & M_W == "M")
   m_w <- "M"
-  half_time <- 45
+  half_time <- 47
   full_time <- 97
-  home_team_name <- "Asheville City"
-  away_team_name <- "Wolves"
-  date_for_plot <- "April 7, 2022"
+  away_team_name <- "Asheville City"
+  home_team_name <- "One Knoxville SC"
+  date_for_plot <- "May 15, 2022"
   # Used for saving file
-  date_label <- "4/7/2022"
+  date_label <- "5/15/2022"
   
   
   ## Find final score ----
@@ -45,7 +45,7 @@ showtext_auto()
     Match_Half = c(1), 
     Minute = c(0), 
     expanded_minute = c(0),
-    xG = c(0)
+    xG_calvaney = c(0)
   )
 
   large_df <- bind_rows(xg_query, start_rows) 
@@ -55,8 +55,8 @@ showtext_auto()
     group_by(Team) %>%
     arrange(Minute) %>%
     mutate(
-      cum_xg = cumsum(xG), 
-      Shooting_Player = if_else(
+      cum_xg = cumsum(xG_calvaney), 
+      Shooting_Player = ifelse(
         Shot_Type == "Penalty", 
         paste0(Shooting_Player, " (PK)"), 
         Shooting_Player
@@ -97,11 +97,11 @@ showtext_auto()
   
   # Colors ----
   # * ENTER COLORS HERE ----
-  home_color <- "#2e334e"
-  away_color <- "#993333" 
+  away_color <- "#2e334e"
+  home_color <- "#993333" 
  
   # Create palette    
-  pal <- c(home_color, away_color)
+  pal <- c(away_color, home_color)
 
   
   # Labels ----
@@ -142,21 +142,21 @@ showtext_auto()
     geom_vline(xintercept = half_time, size = 0.75, colour = "grey", linetype = "dashed") + 
     annotate(
       "text",
-      x = full_time - 0.2,
-      y = home_xg$cum_xg+0.1,
+      x = full_time + 5,
+      y = home_xg$cum_xg ,
       label = home_team_label,
       family = "alatsi",
       fontface = "bold", 
-      color=colors$team_color[colors$Home_Team==1],
+      color=home_color,
       size = 5
     ) +
     annotate(
       "text",
-      x = full_time - 0.2,
-      y = away_xg$cum_xg+0.1,
+      x = full_time + 5,
+      y = away_xg$cum_xg,
       label = away_team_label,
       family = "alatsi",
-      color=colors$team_color[colors$Home_Team==0],
+      color=away_color,
       fontface = "bold",
       size = 5
     ) +
@@ -170,13 +170,13 @@ showtext_auto()
       # Format title ----
       # Add color to team names
       title = str_glue(
-        "<span style='color:{home_color};'>{home_team_name}
+        "<span style='color:{away_color};'>{away_team_name}
          <span style='color:#000000;'>vs.
-         <span style='color:{away_color};'>{away_team_name}</span>
+         <span style='color:{home_color};'>{home_team_name}</span>
          </span>"),
       # Add subtitle ----
       # Date and final score
-      subtitle = paste0(date_for_plot, "\n", home_team_final_score, " - ", away_team_final_score)
+      subtitle = paste0(date_for_plot, "\n", away_team_final_score, " - ", home_team_final_score)
     ) +
     theme(text = element_text(family = "alatsi", face = "bold"),
           legend.position = "none",
